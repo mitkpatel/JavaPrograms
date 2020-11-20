@@ -1,0 +1,80 @@
+package n01415959_mit;
+
+import java.util.Scanner;
+
+public class BankAccount {
+
+	// Instance Fields or variables
+	protected double depositAmount, withdrawAmount;
+	protected double balance;
+	String customerName;
+	int accountNumber;
+	String strForObject;
+
+	// Constructor
+	public BankAccount() {
+		customerName = "TBA";				// Default values
+		accountNumber = 5001;
+		balance = 0;
+		depositAmount = 0;
+		withdrawAmount = 0;
+	}
+
+	// Constructor overloading
+	public BankAccount(String customerName, int accountNumber) {
+		this.customerName = customerName;
+		this.accountNumber = accountNumber;
+	}
+
+	// toString method for string representation of object 
+	public String toString() { 
+		strForObject = "\nAccount Number: " + accountNumber + "\nName: " + customerName + "\nBalance: " + balance ;
+		return strForObject;
+	}
+
+	// Mutator methods
+	// This method will check the deposit amount is valid or not
+	public boolean setDepositAmount(double amount) {
+		boolean successful = false;
+		if (amount > 0) {
+			this.depositAmount = amount;
+			balance = balance + depositAmount;
+			return true;
+		}
+
+		return false;
+	}
+
+	// This method will check the withdraw amount is not exceed to balance
+	public int setWithdrawAmount(double amount) {
+		if (amount <= 0) {
+			return 0;
+		} else {
+			if (balance == 0) {
+				return 1;
+			} else if (amount > balance) {
+				return 2;
+			} else {
+				balance = balance - amount;
+				return 3;
+			}
+		}
+	}
+
+	// Accessor Methods
+	// This method will return current balance
+	public double getBalance() {
+		return balance;
+	}
+	
+	// This method will return last deposit amount
+	public double getDepositAmount() {
+		return depositAmount;
+	}
+
+	// This method will return last withdraw amount
+	public double getWithdrawAmount() {
+		return withdrawAmount;
+	}
+	
+}

@@ -1,0 +1,23 @@
+
+public class Employee {
+	
+	//Instance Fields or variables
+	private String name;
+	private int hoursWorked;
+	private double payRate;
+
+	//Mutator methods
+	public void setName(String newName) {
+		name = newName;
+	}
+	
+	public void sethoursWorked(int newHourWorked) {
+		hoursWorked = newHourWorked;
+	}
+	
+	public void setPayRate(Double newPayRate) {
+		payRate = newPayRate;
+	}
+
+	
+}

@@ -1,0 +1,26 @@
+package Week4Lab3;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Double celsius;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter temperature:");
+		celsius = sc.nextDouble();
+		
+		Temperature t = new Temperature();
+		
+		t.setCelsius(celsius);
+		t.getFahrenheit();
+		t.getKalvin();
+		t.displayTemperature();
+		
+	}
+
+}

@@ -1,0 +1,100 @@
+package n01415959_mit;
+
+import java.util.Scanner;
+
+public class Assignment2 {
+
+	public static void main(String[] args) {
+
+		// Instant variables
+		int userChoice, withdrawCheck;
+		boolean quit = false;
+		double amount = 0;
+		String choice;
+		boolean result;
+		
+		Scanner sc = new Scanner(System.in)
+		AccountInterface accountInterface = new AccountInterface();
+		
+		do {
+			System.out.print("Do you have more items to order (yes -- to continue)? ");
+			choice = sc.nextLine();
+			if(!choice.equalsIgnoreCase("yes")) {
+				customer.printCustomerDetails();		//Calling printCustomerDetails method of Customer class
+				item.printInvoice();				 	//Calling printInvoice method of Item class
+				break;									//Closing while loop if user don't have any item 
+			}				
+		} while (true);
+
+		
+	/*	do {
+			System.out.print("Enter the name of customer(user): ");
+			customerName = sc.nextLine();
+			result = accountInterface.setCustomerName(customerName);         //Calling setCustomerName method of Customer class
+			if (!result) {
+				System.out.printf("Error -- Please enter your name first!\n");
+			}
+		}while (!result);    */
+
+		/*do {
+			System.out.println("1. Deposit money");
+			System.out.println("2. Withdraw money");
+			System.out.println("3. Check balance");
+			System.out.print("Your choice, 0 to quit: ");
+
+			userChoice = Integer.parseInt(sc.nextLine());
+
+			switch (userChoice) {
+
+			case 1:
+				do {
+					System.out.print("Amount you want to deposit: ");
+					amount = Double.parseDouble(sc.nextLine());
+					result = bankAccount.depositAmount(amount);
+					if (!result) {
+						System.out.printf("Error -- Amount should be grather than zero!\n");
+					}
+				} while(!result);
+				
+				break;
+
+			case 2:
+				do {
+					System.out.print("Amount you want to withdraw: ");
+					amount = Double.parseDouble(sc.nextLine());
+					withdrawCheck = bankAccount.withdrawAmount(amount);			
+					if (withdrawCheck == 0) {					
+						System.out.printf("Error -- Withdraw amount should be grather than 0 !\n");
+					}
+					else {
+						if (withdrawCheck == 1) {						
+							System.out.printf("Error -- Your current balance is %.2f. Please deposit some amount first.\n", bankAccount.balance);
+							break;
+		 				}
+						else if (withdrawCheck == 2) {						
+							System.out.printf("Error -- Your withdraw amount is excedding current balance which is %.2f!\n", bankAccount.balance);
+		 				}
+		 				else {
+		 					withdrawCheck = 2;							
+		 				}
+					}
+				}while (withdrawCheck != 2);
+				break;
+
+			case 3:
+				System.out.printf("Hello %s ! Your current balance is : $\n", accountInterface.customerName, bankAccount.checkBalance());
+				break;
+
+			case 0:
+				quit = true;
+				break;
+
+			default:
+				System.out.println("Wrong choice.");
+				break;
+			}
+		} while (!quit);  */
+		
+		System.out.println("Goodbye!");
+	}
+}

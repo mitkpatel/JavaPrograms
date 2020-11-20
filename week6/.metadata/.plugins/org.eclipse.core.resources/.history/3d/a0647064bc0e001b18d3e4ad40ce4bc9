@@ -1,0 +1,56 @@
+
+public class Employee {
+	
+	//Instance Fields or variables
+	private String name;
+	private double hoursWorked, payRate;
+
+	//Mutator methods
+	public void setName(String newName) {
+		name = newName;
+	}
+	
+	public void setHoursWorked(double newHourWorked) {
+		hoursWorked = newHourWorked;
+	}
+	
+	public void setPayRate(double newPayRate) {
+		payRate = newPayRate;
+	}
+
+	//Accessor Methods
+	public String getName() {
+		return name;
+	}
+	
+	public double getHoursWorked() {
+		return hoursWorked;
+	}
+	
+	public double getPayRate() {
+		return payRate;
+	}
+	
+	//Constructor
+	public Employee() {
+		name = "XYZ";
+		hoursWorked= 20; //random value
+		payRate = 20;
+	}
+	
+	//GrossPay method
+	public double getGrossPay() {
+		double grossPay = hoursWorked * payRate;
+		return grossPay;
+	}
+	
+	public void printDetails() {
+		System.out.printf("Name of employee: %20s\n", name);
+		System.out.printf("Phone : %14s\n", phone);
+		System.out.printf("Number of packages: %3d\n", numPackages);
+		System.out.printf("Discount Amount : %.2f\n", getDiscount());
+		System.out.printf("Net Amount: %.2f\n",  getNetAmount());
+		
+	}
+
+}

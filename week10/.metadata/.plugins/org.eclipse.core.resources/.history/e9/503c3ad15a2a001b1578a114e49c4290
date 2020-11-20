@@ -1,0 +1,89 @@
+package Lab7_mit;
+
+import java.util.Arrays;
+
+public class Item {
+
+	String customerName;
+	long phone;
+	int quantity;
+	double subTotal;
+
+	String[] itemName = new String[8];
+	double[] unitPrice = new double[8];
+	double unitPriceCurrent, netTotal = 0, netQuantity = 0;
+	String itemNameCurrent;
+	
+	
+	public Item() {
+		itemName = new String[] { "Laptop-1", "Laptop-2", "Desktop-1", "Desktop-2", "Monitor-1", "Monitor-2", "Printer-1",
+		"Printer-2" };
+		unitPrice = new double[] { 699, 749, 549, 689, 99, 149, 349, 479 };
+		unitPriceCurrent = 0;
+		itemNameCurrent = "";
+	}
+	
+	public String[] getItemName() {
+		return itemName;
+	}
+
+	public boolean setItemName(String itemName) {
+		for (int i = 0; i < this.itemName.length; i++) {
+			if (itemName.equalsIgnoreCase(this.itemName[i])) {
+				unitPriceCurrent  = this.unitPrice[i];
+				itemNameCurrent = this.itemName[i];
+				return true;
+			}
+		}
+		return false;
+		
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public Item(String[] itemName, int quantity) {
+		super();
+		this.quantity = quantity;
+		this.itemName = itemName;
+	}
+
+	public void setCustomerName(String customerName) {
+		if (!(customerName.isEmpty()))
+			this.customerName = customerName;
+	}
+
+	public long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public boolean setQuantity(int quantity) {
+		if ((quantity > 0) && (quantity <= 10)) {
+			this.quantity = quantity;
+			netQuantity = netQuantity + this.quantity;
+			return true;
+		}
+		return false;
+	}
+	
+	
+	public double calculateSubTotal() {
+		subTotal = quantity * unitPriceCurrent;
+		netTotal = netTotal + subTotal;
+		return subTotal;
+	}
+
+	@Override
+	public String toString() {
+		return itemNameCurrent +" 	" + quantity + "	    " + unitPriceCurrent + "	      " + subTotal;
+	}
+}

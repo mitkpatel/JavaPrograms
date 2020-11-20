@@ -1,0 +1,32 @@
+package Lab4_n01415959;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//Get Name, ContactNumber and NumberOfPackages from Customer(User)
+		String customerName;
+		int numberOfPackages;
+		long contactNumber;
+		double discountRate = 0.0;
+		int purchase = 1250;
+	
+		int items = 3;
+		for (int i = 1; i <= items; i++)
+		{
+		    int result = 1;
+		    int j = i;
+		    while (j >= 1)
+		    {
+		       result *= j;
+		       j--;
+		    }
+		    System.out.println("Factorial " + i + " = " + result);
+		}
+
+		System.exit(0);
+	}
+
+}

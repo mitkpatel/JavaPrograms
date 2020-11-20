@@ -1,0 +1,31 @@
+package n01415959_mit;
+
+import java.util.Scanner;
+
+public class Assignment2 {
+
+	public static void main(String[] args) {
+
+		// Instant variables
+		String choice;
+		
+		Scanner sc = new Scanner(System.in);
+		AccountInterface accountInterface = new AccountInterface();
+		
+		accountInterface.setCustomerName();
+		
+		do {
+			System.out.print("\nDo you have more customer (yes -- to continue)? ");
+			choice = sc.nextLine();
+			if(choice.equalsIgnoreCase("yes")) {
+				AccountInterface accountInterface1 = new AccountInterface();
+			}				
+			else {
+				System.out.println(accountInterface);
+				System.out.println("Goodbye!");
+				break; 			//Closing while loop if user don't have any item 
+			}
+		} while (true);
+		
+	}
+}

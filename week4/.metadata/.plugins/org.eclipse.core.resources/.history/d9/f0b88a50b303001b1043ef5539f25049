@@ -1,0 +1,23 @@
+package Week4Lab3;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Double temperature;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter temperature:");
+		temperature = sc.nextDouble();
+		
+		Temperature t = new Temperature();
+		System.out.println("Temperature in fahrenheit:" + t.fahConvert(temperature));
+		System.out.println("Temperature in kalvin:" + t.kalvinConvert(temperature));
+		
+	}
+
+}

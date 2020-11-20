@@ -1,0 +1,38 @@
+package week3;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String name;
+		name = "Mit";
+		
+		System.out.println("name is: "+ name);
+		System.out.println(45 + 35);
+		
+		double x = 20.50; 
+		int y = (int)x;
+		System.out.println(y);
+	
+		String age = "efesd";
+		
+		age = "" + true;
+		System.out.println(age);
+		
+		age = "" + 'A';
+		System.out.println(age);
+	}
+
+	/*
+	 *  Write a program which accept hours worked and payrate
+	 *  from user. Calculate gross pay and net pay. 
+	 *  Display all the results to the user.
+	 */
+	
+	//Step 1 - Declare variable
+	//Step 2 - Get the data from user
+	//Step 3 - Perform calculation
+	//Step 4 - Display information/results to the user
+	
+}

@@ -1,0 +1,25 @@
+package Week4Lab3;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+
+		Double celsius;       //Declaring variable for celsius temperature
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter temperature in Celsius:");
+		celsius = sc.nextDouble();
+		
+		Temperature temperature = new Temperature();
+		
+		temperature.setCelsius(celsius);
+		temperature.getFahrenheit();
+		temperature.getKalvin();
+		temperature.displayTemperature();
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+
+public class Employee {
+	
+	//Instance Fields or variables
+	private String name;
+	private int hoursWorked;
+	private double payRate;
+
+	//Mutator methods
+}

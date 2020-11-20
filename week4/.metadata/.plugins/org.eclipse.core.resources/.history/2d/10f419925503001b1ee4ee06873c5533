@@ -1,0 +1,24 @@
+package Week4LAb;
+
+public class Bill {
+
+	private double mCharge, taxCharge, tipCharhe, netCharge;
+		
+	public void setMealCharges(double newMealCharge) {
+
+		mCharge = newMealCharge;
+	}
+
+	//Type 2
+	
+	public double getTaxCharge() {
+		taxCharge = mCharge * 0.075;
+		return taxCharge;
+	}
+	
+	public double getTipCharge() {
+		tipCharhe = mCharge * 0.18;
+		return tipCharhe;
+	}
+	
+}

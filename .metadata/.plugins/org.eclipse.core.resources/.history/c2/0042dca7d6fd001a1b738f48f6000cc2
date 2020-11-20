@@ -1,0 +1,70 @@
+package week3;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String name;
+		name = "Mit";
+		
+		System.out.println("name is: "+ name);
+		System.out.println(45 + 35);
+		
+		double x = 20.50; 
+		int y = (int)x;
+		System.out.println(y);
+	
+		String age = "efesd";
+		
+		age = "" + true;
+		System.out.println(age);
+		
+		age = "" + 'A';
+		System.out.println(age);
+		
+		/*
+		 *  Write a program which accept hours worked and payrate
+		 *  from user. Calculate gross pay and net pay. 
+		 *  Display all the results to the user.
+		 */
+		
+		//Step 1 - Declare variable
+		double hoursWorked, grossPay, payRate, netPay, taxes;
+		
+		//Step 2 - Get the data from user
+		Scanner kbd;		 //Declared a ref variable kbd of class Scanner
+		kbd = new Scanner(System.in);
+		
+		System.out.println("Enter your pay rate:");
+		//Read pay rate from kbd
+		payRate = kbd.nextDouble();
+		
+		System.out.println("Enter your hours rate:");
+		//Read pay hours from kbd
+		hoursWorked = kbd.nextDouble();
+		
+		//Step 3 - Perform calculation
+		grossPay = hoursWorked * payRate;
+		taxes = grossPay * 0.1;
+		netPay = grossPay - taxes;
+		
+		//Step 4 - Display information/results to the user
+		
+		System.out.println("Grosspay: " +grossPay);
+		System.out.println("Tax: " + taxes);
+		System.out.println("Net pay: " + netPay);
+		
+		System.out.printf("Hours Worked  : %10.1f", hoursWorked);     //Maximum 10 hours with 1 decimal
+		System.out.printf("Hourly payrate: %8.2f", hoursWorked); 
+		System.out.printf("Taxes         : %10.1f", taxes); 
+		System.out.printf("Gross Pay     : %10.2f", grossPay);
+		System.out.printf("Net Pay       : %10.2f", NetPay);
+
+	}
+	
+
+	
+}

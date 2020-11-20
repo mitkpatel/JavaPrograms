@@ -1,0 +1,23 @@
+package Lab2;     //Lab2 work
+
+import java.util.Scanner;
+
+public class Lab2_n01415959 {
+	
+	public static void main(String[] args) {
+		
+		Double mealCharge, tax, tip, totalBill; 	//Declaration of variables
+		
+		//Get data from user
+		Scanner kbdkbd = new Scanner(System.in);	//Declared a reference variable kbd of class Scanner, which takes input from user
+		
+		System.out.print("Enter the charge for the meal:");
+		mealCharge = kbd.nextDouble();      		//Read meal charge from kbd
+		
+		tax = mealCharge * 0.075;               	//Calculating the tax amount; tax = mealCharge*(7.5/100)
+		tip = mealCharge * 0.18;					//Calculating the tip amount; tip = mealCharge*(18/100) 
+		totalBill = mealCharge + tax + tip;			//Calculating the net bill by summing up the all values
+	
+		
+	}
+}

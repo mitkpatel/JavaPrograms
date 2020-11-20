@@ -1,0 +1,41 @@
+
+public class Employee {
+	
+	//Instance Fields or variables
+	private String name;
+	private double hoursWorked, payRate;
+
+	//Mutator methods
+	public void setName(String newName) {
+		name = newName;
+	}
+	
+	public void setHoursWorked(double newHourWorked) {
+		hoursWorked = newHourWorked;
+	}
+	
+	public void setPayRate(double newPayRate) {
+		payRate = newPayRate;
+	}
+
+	//Accessor Methods
+	public String getName() {
+		return name;
+	}
+	
+	public int getHoursWorked() {
+		return hoursWorked;
+	}
+	
+	public double getPayRate() {
+		return payRate;
+	}
+	
+	//Constructor
+	public Employee() {
+		name = "XYZ";
+		hoursWorked="111-111-1111";
+		numPackages = 0;
+	}
+
+}

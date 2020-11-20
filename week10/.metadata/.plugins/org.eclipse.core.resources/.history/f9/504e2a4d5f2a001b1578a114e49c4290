@@ -1,0 +1,67 @@
+package Lab7_mit;
+
+import java.util.Arrays;
+
+public class Item {
+
+	//Instant fields
+	int quantity;
+	double subTotal;
+
+	String[] itemName = new String[8];
+	double[] unitPrice = new double[8];
+	double unitPriceCurrent;
+	String itemNameCurrent;
+	
+
+	//initializing the itemName and unitPrice array at time of object creation
+	public Item() {
+		itemName = new String[] { "Laptop-1", "Laptop-2", "Desktop-1", "Desktop-2", "Monitor-1", "Monitor-2", "Printer-1",
+		"Printer-2" };
+		unitPrice = new double[] { 699, 749, 549, 689, 99, 149, 349, 479 };
+		unitPriceCurrent = 0;
+		itemNameCurrent = "";
+	}
+
+	//Setter and getter method for requied fields
+	public String getItemName() {
+		return itemNameCurrent;
+	}
+
+	public boolean setItemName(String itemName) {
+		for (int i = 0; i < this.itemName.length; i++) {
+			if (itemName.equalsIgnoreCase(this.itemName[i])) {
+				unitPriceCurrent  = this.unitPrice[i];
+				itemNameCurrent = this.itemName[i];
+				return true;
+			}
+		}
+		return false;
+		
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public boolean setQuantity(int quantity) {
+		if ((quantity > 0) && (quantity <= 10)) {
+			this.quantity = quantity;
+			return true;
+		}
+		return false;
+	}
+	
+
+	//method for calculating subtotal
+	public double calculateSubTotal() {
+		subTotal = quantity * unitPriceCurrent;
+		return subTotal;
+	}
+
+	//toString method to store the object value in string format whenever object is called
+	@Override
+	public String toString() {
+		return getItemName() +" 	" + getQuantity() + "	    " + unitPriceCurrent + "           " + subTotal;
+	}
+}

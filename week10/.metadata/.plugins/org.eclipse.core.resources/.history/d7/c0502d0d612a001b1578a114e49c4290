@@ -1,0 +1,87 @@
+package Lab7_mit;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Creating array of object.
+		Item item[] = new Item[8];
+		
+		//
+		int totalOrder = 0, netQuantity = 0;
+		String name, choice = "yes";
+		long number;
+		double subTotal, netTotal = 0;
+
+		Scanner sc = new Scanner(System.in);
+		
+		//loop for checking the name is empty or not
+		do {
+			System.out.println("Enter the name of customer:");
+			name = sc.nextLine();
+			if (!name.isBlank())
+				break;
+		} while(true);
+	
+		//loop for checking the number is positive or not
+		do {
+			System.out.printf("Enter the contact number of customer %s:\n",name);
+			number = Long.parseLong(sc.nextLine());
+			if (number > 0)
+				break;
+		} while(true);
+
+		//for loop execute until user has no item to order (choice!=yes)
+		for (int i = 0; (choice.equals("yes")) ; i++) {
+			
+			item[i] = new Item();		//calling the default constructor to reset the values  
+			
+			//loop for checking the item name is from list or not
+			do {
+				System.out.println("Enter item name:");
+				String itemName = sc.nextLine();
+				if (item[i].setItemName(itemName)) {
+					totalOrder++;
+					break;
+				} else {
+					System.out.printf("Error -- %s is not available at shop!!!\n", itemName);
+				}
+			} while (true);
+			
+			//loop for checking the quantity is valid or not
+			do {
+				System.out.printf("Enter item quantity:");
+				int quantity = Integer.parseInt(sc.nextLine());
+				if (item[i].setQuantity(quantity)) {
+					netQuantity = netQuantity + quantity;
+					break;
+				} else {
+					System.out.println("Error -- Quantity should be between 1 to 10.");
+				}
+			} while(true);
+			
+			// get the values of subTotal from Item class
+			subTotal = item[i].calculateSubTotal();
+			netTotal = netTotal + subTotal;
+			
+			System.out.println("Do you have more items to order???");
+			choice = sc.nextLine();
+			if (choice.equalsIgnoreCase("yes")) 
+				continue;
+		}
+		
+		System.out.printf("\nCustomer name: %s", name);
+		System.out.printf("\nNumber: %s", number);
+		
+		System.out.println("\nItem Name  |  Quantity  |  Unit Price  |  Subtotal");
+		
+		for (int i = 0; i < totalOrder ; i++) {
+				// calling toString method by passing the object
+				System.out.printf(item[i] + "\n");
+		}
+		System.out.printf("Total 		%d			   %.2f",netQuantity, netTotal);
+	}
+}

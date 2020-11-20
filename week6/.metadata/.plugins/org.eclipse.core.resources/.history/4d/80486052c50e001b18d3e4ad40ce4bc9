@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name;
+		double hoursWorked, payRate;
+		boolean employeeStatus = true;
+		String moreEmp;
+		
+		while(employeeStatus) {
+			System.out.println("Do you have employee(Y/N or y/n): ");
+			Scanner sc = new Scanner(System.in);
+			moreEmp = sc.nextLine();
+			
+			if(moreEmp.equalsIgnoreCase("Y")) {
+				employeeStatus = true;
+				System.out.println("Enter the name of employee:");
+				name = sc.nextLine();
+				
+				System.out.println("\nEnter the number of hours worked:");
+				hoursWorked = sc.nextDouble();
+				
+				if (hoursWorked <= 0) {
+					System.out.println("Hours should be grather than 0!");	
+				}
+				else {
+					System.out.println("Enter the pay rate:");
+					payRate = sc.nextDouble();
+					
+					if ((payRate < 20) && (payRate > 80)) {
+						System.out.println("Please enter valid pay rate");
+					}
+					else {
+						Employee employee = new Employee();
+						employee.setName(name);
+						employee.setHoursWorked(hoursWorked);
+						employee.setPayRate(payRate);
+						employee.printDetails();
+					}
+				}
+
+			}
+			
+			else {
+				System.out.println("No more employee!! See you");
+				employeeStatus = false;
+				System.exit(0);
+			}
+		}
+	}
+}
