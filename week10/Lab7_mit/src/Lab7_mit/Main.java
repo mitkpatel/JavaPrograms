@@ -10,7 +10,7 @@ public class Main {
 		//Creating array of object.
 		Item item[] = new Item[8];
 		
-		//
+		//Instance fields or variables
 		int totalOrder = 0, netQuantity = 0;
 		String name, choice = "yes";
 		long number;

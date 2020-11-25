@@ -1,0 +1,53 @@
+package assignment3_mit;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Student {
+	
+	ArrayList<String> studentID = new ArrayList<String>();
+	String studenName;
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
+		studenName = "TBA";
+	}
+	
+	@Override
+	public String toString() {
+		return "\nStudent ID: " + Arrays.toString(getStudentID().toArray()).replace("[", "").replace("]", "") + " \nStudent Name: " + studenName;
+	}
+
+	public int setStudentID(String studentID) {
+		int returnID;
+		if (studentID.isEmpty())
+			returnID = 1;
+		else {
+			for (int i = 0; i < this.studentID.size(); i++) {
+				if((String.valueOf(this.studentID).contains(studentID))) {
+					
+				}
+			}
+			returnID = 3;
+		}
+		return returnID;
+	}
+	
+	public ArrayList<String> getStudentID() {
+		return studentID;
+	}
+	
+	public boolean setStudenName(String studenName) {
+		if (!(studenName.isEmpty())) {
+			this.studenName = studenName;
+			return true;
+		} 
+		
+		return false;
+	}
+	
+	public String getStudenName() {
+		return studenName;
+	}
+	
+}

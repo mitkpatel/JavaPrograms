@@ -1,0 +1,78 @@
+package assignment3_mit;
+
+import java.util.ArrayList;
+
+public class Assignment {
+	
+	ArrayList<Integer> assignmentID = new ArrayList<Integer>();
+	ArrayList<Double> maximunScore = new ArrayList<Double>();
+	ArrayList<Double> scoreObtain = new ArrayList<Double>();
+
+	// int assignmentID = 0;
+	String assignmentName;
+	double totalScore = 0, maximunScoreTemp;
+	
+	protected final int MIN_SCORE = 0, MAX_SCORE = 10;
+
+	public boolean setAssignmentID(int assignmentID) {
+		if (!(this.assignmentID.contains(assignmentID))) {
+			this.assignmentID.add(assignmentID);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public ArrayList<Integer> getAssignmentID() {
+		return assignmentID;
+	}
+
+	public boolean setAssignmentName(String assignmentName) {
+		if (!(assignmentName.isEmpty())) {
+			this.assignmentName = assignmentName;
+			return true;
+		} 
+		
+		return false;
+	}
+	
+	public String getAssignmentName() {
+		return assignmentName;
+	}
+	
+	public boolean setMaximunScore(double maximunScore) {
+		if ((maximunScore >= MIN_SCORE) && (maximunScore < MAX_SCORE)) {
+			this.maximunScore.add(maximunScore);
+			maximunScoreTemp = maximunScore;
+			return true;
+		} 
+		else 
+			return false;
+	}
+	
+	public ArrayList<Double> getMaximunScore() {
+		return maximunScore;
+	}
+	
+	public boolean setScoreObtain(double scoreObtain) {
+		if ((scoreObtain >= MIN_SCORE) && (scoreObtain <= maximunScoreTemp)) {
+			this.scoreObtain.add(scoreObtain);
+			return true;
+		} 
+		else
+			return false;
+	}
+	
+	public ArrayList<Double> getScoreObtain() {
+		return scoreObtain;
+	}
+
+	@Override
+	public String toString() {
+		return "assignmentID=" + assignmentID + ", assignmentName=" + assignmentName + ", maximunScore=" + maximunScore + ", scoreObtain="
+				+ scoreObtain;
+	}
+	
+	
+}

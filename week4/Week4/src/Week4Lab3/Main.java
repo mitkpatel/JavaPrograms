@@ -9,23 +9,33 @@ public class Main{
 		Double celsius;       									  //Declaring variable for celsius temperature
 		
 		
-		if(a<10)
-			System.out.println("hello");
-		else
-			System.out.println("world");
-			System.out.println("sda");
-		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter temperature in Celsius:");
-		celsius = sc.nextDouble();                 				 //Store the user value into celsius
+		int[] nums = new int[4];
+		for (int i = 0; i <= nums.length; i++)
+		{
+		    nums[i] = i;
+		}
+		System.out.println(nums[2]);
+
 		
-		Temperature temperature = new Temperature(); 	 		 //Creating an object of Temperature Class
 		
-		temperature.setCelsius(celsius);            			 //calling setCelsius() method of Temperature Class
-		temperature.getFahrenheit();							 //calling getFahrenheit() method of Temperature Class
-		temperature.getKalvin();								 //calling getKalvin() method of Temperature Class
-		temperature.displayTemperature();						 //calling displayTemperature() method of Temperature Class
-		
-		System.exit(0);
+		/*
+		 * if(a<10) System.out.println("hello"); else System.out.println("world");
+		 * System.out.println("sda"); Scanner sc = new Scanner(System.in);
+		 * 
+		 * System.out.println("Enter temperature in Celsius:"); celsius =
+		 * sc.nextDouble(); //Store the user value into celsius
+		 * 
+		 * Temperature temperature = new Temperature(); //Creating an object of
+		 * Temperature Class
+		 * 
+		 * temperature.setCelsius(celsius); //calling setCelsius() method of Temperature
+		 * Class temperature.getFahrenheit(); //calling getFahrenheit() method of
+		 * Temperature Class temperature.getKalvin(); //calling getKalvin() method of
+		 * Temperature Class temperature.displayTemperature(); //calling
+		 * displayTemperature() method of Temperature Class
+		 * 
+		 * System.exit(0);
+		 */
 	}
 }
