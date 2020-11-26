@@ -54,7 +54,8 @@ public class Rectangle {
 	// Overriding toString() to return details of rectangle
 	@Override
 	public String toString() {
-		return "Rectangle [length=" + length + ", width=" + width + ", area=" + getArea() + ", perimeter=" + getPerimeter() + "]\n";
+		return "\nRectangle details.\nlength = " + length + "\nwidth = " + width + "\narea = " + getArea() + 
+				"\nperimeter = " + getPerimeter() + "\n";
 	}
 	
 }
