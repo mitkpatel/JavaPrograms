@@ -1,0 +1,99 @@
+package assignment4_mit;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int fictionQuantity = 0, nonFictionQuantity = 0, counter = 0, choice;
+		double netTotal = 0;
+		String nameOfBook, customerName;
+		
+		// Array of class object with size 10 (Maximum 10 books user can buy)
+		Book book[] = new Book[10];
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Welcome to book store.");
+		System.out.println("Enter your name (customer name): ");
+		customerName = sc.nextLine();
+		
+		do {
+			
+			do {
+				System.out.println("Press 1 to buy fiction book and press 2 for non-fiction: ");
+				choice = Integer.parseInt(sc.nextLine());
+				
+				if (choice == 1 || choice == 2) {
+					if (choice == 1) {
+						System.out.println("Enter the name of book: ");
+						nameOfBook = sc.nextLine();
+						book[counter] = new FictionBook(nameOfBook);
+						fictionQuantity++;
+						counter++;
+					}
+					else {
+						System.out.println("Enter the name of book: ");
+						nameOfBook = sc.nextLine();
+						book[counter] = new NonFictionBook(nameOfBook);
+						nonFictionQuantity++;
+						counter++;
+					}
+					break;
+				}
+				else {
+					System.out.println("Error -- Wrong choice! Please enter 1 or 2 only.");
+				}
+				
+			} while (true);
+			
+			System.out.println("Do you want to buy more books? (yes -- to contiue?) ");
+			String userChoice = sc.nextLine();
+			
+			if (userChoice.equalsIgnoreCase("yes")) {
+				if (counter >= 10) {
+					System.out.println("Sorry!!! You can not buy more than 10 books.");
+					System.out.println("Do you want buy this 10 books? (yes -- to generate bill) ");
+					String temp = sc.nextLine();
+					if(!temp.equalsIgnoreCase("yes")) {
+						System.out.println("Goodbye!");
+						break;
+					}
+					break;
+				}
+				else {
+					continue;
+				}
+			}
+			else {
+				if (counter < 5) {
+					System.out.println("Sorry!!! You need to buy atleast 5 books.");
+					System.out.println("Do you want to contiue buy books? (yes -- to contiue) ");
+					String temp = sc.nextLine();
+					if(!temp.equalsIgnoreCase("yes")) {
+						System.out.println("Goodbye!");
+						break;
+					}
+				}
+				else {
+					break;
+				}
+				
+			}
+		} while (true);	
+		
+		System.out.println("\nThnak you, " + customerName + ". Here is your bill.");
+		System.out.println("Customer name: " + customerName);
+		for (int i = 0; i < counter; i++) {
+			System.out.printf("\nBook name : %s", book[i].getTitle());
+			System.out.printf("\nBook price: $ %.2f", book[i].getPrice());
+			netTotal = netTotal + book[i].getPrice();
+		}
+		
+		System.out.println("\n\nQuantity of fiction books: " +fictionQuantity);
+		System.out.println("Quantity of non-fiction books: " +nonFictionQuantity);
+		System.out.println("Total number of books: " + (fictionQuantity + nonFictionQuantity));
+		System.out.printf("Net total: $ %.2f", netTotal);
+		
+	}
+}

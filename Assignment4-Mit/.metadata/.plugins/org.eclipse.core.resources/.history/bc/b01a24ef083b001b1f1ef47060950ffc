@@ -1,0 +1,5 @@
+package assignment4_mit;
+
+public class FictionBook extends Book {
+
+}

@@ -1,0 +1,21 @@
+package assignment4_mit;
+
+public class FictionBook extends Book {
+	
+	
+	public FictionBook(String title) {
+		super(title);
+		setPrice();
+	}
+
+
+	public void setPrice() {
+		price = 24.99;
+	}
+
+	@Override
+	public String toString() {
+		return "FictionBook [title=" + title + ", price=" + price + "]";
+	}
+
+}

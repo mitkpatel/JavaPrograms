@@ -1,0 +1,22 @@
+package assignment4_mit;
+
+public class FictionBook extends Book {
+	
+	
+	public FictionBook(String title) {
+		super(title);
+		setPrice();
+	}
+
+	// implementing abstract method
+	@Override
+	public void setPrice() {
+		price = 24.99;
+	}
+
+	@Override
+	public String toString() {
+		return "Book name : " + title + "\nPrice : $ " + price;
+	}
+
+}

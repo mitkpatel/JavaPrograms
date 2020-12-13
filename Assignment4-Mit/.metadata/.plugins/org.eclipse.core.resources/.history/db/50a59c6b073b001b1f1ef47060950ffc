@@ -1,0 +1,9 @@
+package assignment4_mit;
+
+public abstract class Book {
+	
+	// Instant variables
+	protected String title;
+	protected double price;
+
+}

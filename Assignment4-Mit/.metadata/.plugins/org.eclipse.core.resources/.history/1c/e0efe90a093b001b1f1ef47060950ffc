@@ -1,0 +1,12 @@
+package assignment4_mit;
+
+public class FictionBook extends Book {
+
+	
+	@Override
+	public void setPrice(double price) {
+		// TODO Auto-generated method stub
+		price = 24.99 ;
+	}
+
+}

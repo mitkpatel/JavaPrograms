@@ -1,0 +1,10 @@
+package assignment4_mit;
+
+public class NonFictionBook extends Book {
+
+	@Override
+	public void setPrice(double price) {
+		
+	}
+
+}

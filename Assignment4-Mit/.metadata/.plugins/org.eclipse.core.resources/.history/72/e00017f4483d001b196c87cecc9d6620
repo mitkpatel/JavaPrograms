@@ -1,0 +1,38 @@
+package assignment4_mit;
+
+public abstract class Book {
+	
+	// Instant variables
+	protected String title;
+	protected double price;
+	
+	// Default constructor
+	public Book() {
+		title = "TBA";
+		price = 0;
+	}
+	
+	// Overloaded constructor
+	public Book(String title) {
+		this.title = title;
+	}
+
+	// Get methods for price and title
+	public double getPrice() {
+		return price;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+	
+	// abstract method to set price
+	public abstract void setPrice();
+
+	// toString method to print object
+	@Override
+	public String toString() {
+		return "Book title = " + title + "\nPrice = " + price;
+	}
+	
+}

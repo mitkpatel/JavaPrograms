@@ -1,0 +1,31 @@
+package assignment4_mit;
+
+public abstract class Book {
+	
+	// Instant variables
+	protected String title;
+	protected double price;
+	
+	public Book() {
+		title = "TBA";
+		price = 0;
+	}
+	
+	public Book(String title) {
+		super();
+		this.title = title;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+	
+	public abstract void setPrice(double price) {}
+	
+	
+
+}

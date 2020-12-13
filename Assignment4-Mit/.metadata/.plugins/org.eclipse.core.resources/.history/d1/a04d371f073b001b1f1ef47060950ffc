@@ -1,0 +1,5 @@
+package assignment4_mit;
+
+public abstract class Book {
+
+}
